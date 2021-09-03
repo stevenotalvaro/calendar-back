@@ -7,6 +7,9 @@ const app = express()
 // Public directory
 app.use(express.static('public'))
 
+//reading and parseo of body
+app.use(express.json())
+
 // Routes
 app.use('/api/auth', require('./routers/auth'))
 
