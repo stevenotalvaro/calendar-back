@@ -5,14 +5,14 @@
 const {Router} = require('express')
 const {check} = require('express-validator')
 const router = Router()
+const {validationJWT} = require('../middlewares/validation-JWT')
+const {validationFields} = require('../middlewares/validation-fields')
 
 const {
     createUser,
     loginUser,
     revalidationToken,
 } = require('../controllers/auth')
-const {validationFields} = require('../middlewares/validation-fields')
-const {validationJWT} = require('../middlewares/validation-JWT')
 
 router.post(
     '/new',

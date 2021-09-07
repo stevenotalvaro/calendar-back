@@ -20,6 +20,7 @@ app.use(express.json())
 
 // Routes
 app.use('/api/auth', require('./routers/auth'))
+app.use('/api/events', require('./routers/event'))
 
 //lisening petitions
 app.listen(process.env.PORT, () => {
