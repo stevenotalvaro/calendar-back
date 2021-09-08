@@ -30,7 +30,17 @@ router.post(
 
     createEvent,
 )
-router.put('/:id', validationJWT, updateEvent)
+router.put(
+    '/:id',
+    [
+        check('title', 'title is required').not().isEmpty(),
+        check('start', 'date is required').custom(isDate),
+        check('end', 'date is required').custom(isDate),
+        validationFields,
+    ],
+    validationJWT,
+    updateEvent,
+)
 router.delete('/', validationJWT, deleteEvent)
 
 module.exports = router
