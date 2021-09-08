@@ -41,6 +41,6 @@ router.put(
     validationJWT,
     updateEvent,
 )
-router.delete('/', validationJWT, deleteEvent)
+router.delete('/:id', validationJWT, deleteEvent)
 
 module.exports = router
